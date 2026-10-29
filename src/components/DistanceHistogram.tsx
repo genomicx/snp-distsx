@@ -111,8 +111,8 @@ export function DistanceHistogram({
               y={y}
               width={barW}
               height={h}
-              fill={isBelow ? 'rgba(239,68,68,0.65)' : 'rgba(45,212,191,0.65)'}
-              stroke={isBelow ? 'rgba(239,68,68,0.9)' : 'rgba(45,212,191,0.9)'}
+              fill={isBelow ? 'rgba(239,68,68,0.65)' : 'rgba(36,93,180,0.65)'}
+              stroke={isBelow ? 'rgba(239,68,68,0.9)' : 'rgba(36,93,180,0.9)'}
               strokeWidth="0.5"
             >
               <title>{`${i * binWidth}–${(i + 1) * binWidth - 1} SNPs: ${count} pairs`}</title>

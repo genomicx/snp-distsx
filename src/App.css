@@ -61,7 +61,7 @@
 .theme-toggle {
   background: var(--gx-bg-alt);
   border: 1px solid var(--gx-border);
-  border-radius: 10px;
+  border-radius: var(--gx-radius-lg);
   padding: 0.45rem 0.7rem;
   cursor: pointer;
   font-size: 1.15rem;
@@ -142,7 +142,7 @@
   min-height: 180px;
   height: 100%;
   border: 2px dashed var(--gx-border);
-  border-radius: 12px;
+  border-radius: var(--gx-radius-lg);
   padding: 2rem 1.5rem;
   text-align: center;
   cursor: pointer;
@@ -188,7 +188,7 @@
 .options-panel {
   background: var(--gx-bg-alt);
   border: 1px solid var(--gx-border);
-  border-radius: 12px;
+  border-radius: var(--gx-radius-lg);
   padding: 1.25rem 1.5rem;
   box-shadow: var(--gx-shadow);
 }
@@ -284,33 +284,34 @@
   width: 100%;
   padding: 0.8rem 2rem;
   background: var(--gx-gradient);
-  color: white;
+  color: var(--gx-text-inverted);
   border: none;
-  border-radius: 10px;
+  border-radius: var(--gx-radius-lg);
   font-family: inherit;
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s;
-  box-shadow: 0 2px 8px rgba(13, 148, 136, 0.3);
+  box-shadow: var(--gx-shadow);
   margin-bottom: 1.5rem;
 }
 
 .run-button:hover:not(:disabled) {
   transform: translateY(-2px);
-  box-shadow: 0 4px 16px rgba(13, 148, 136, 0.4);
+  box-shadow: 0 4px 16px var(--gx-shadow);
 }
 
 .run-button:active:not(:disabled) {
   transform: translateY(0);
-  box-shadow: 0 1px 4px rgba(13, 148, 136, 0.3);
+  box-shadow: var(--gx-shadow);
 }
 
 .run-button:disabled {
-  background: var(--gx-accent);
+  background: var(--gx-disabled-bg);
+  color: var(--gx-disabled-text);
   cursor: not-allowed;
   box-shadow: none;
-  opacity: 0.5;
+  opacity: 1;
 }
 
 .export-button {
@@ -318,7 +319,7 @@
   background: var(--gx-bg-alt);
   color: var(--gx-accent);
   border: 1px solid var(--gx-accent);
-  border-radius: 8px;
+  border-radius: var(--gx-radius);
   font-family: var(--gx-font-mono);
   font-size: 0.8rem;
   font-weight: 600;
@@ -328,7 +329,7 @@
 
 .export-button:hover {
   background: var(--gx-accent);
-  color: white;
+  color: var(--gx-text-inverted);
 }
 
 /* ── Progress ────────────────────────────────── */
@@ -336,7 +337,7 @@
   margin-bottom: 1.5rem;
   background: var(--gx-bg-alt);
   border: 1px solid var(--gx-border);
-  border-radius: 12px;
+  border-radius: var(--gx-radius-lg);
   padding: 1.25rem 1.5rem;
   box-shadow: var(--gx-shadow);
 }
@@ -390,7 +391,7 @@
 .error {
   background: rgba(239, 68, 68, 0.1);
   border: 1px solid rgba(239, 68, 68, 0.2);
-  border-radius: 10px;
+  border-radius: var(--gx-radius-lg);
   padding: 1rem 1.25rem;
   margin-bottom: 1.5rem;
 }
@@ -405,7 +406,7 @@
 .results {
   background: var(--gx-bg-alt);
   border: 1px solid var(--gx-border);
-  border-radius: 12px;
+  border-radius: var(--gx-radius-lg);
   padding: 1.5rem;
   box-shadow: var(--gx-shadow);
   margin-bottom: 1.5rem;
@@ -508,12 +509,12 @@
   width: 120px;
   height: 10px;
   border-radius: 3px;
-  background: linear-gradient(to right, #ffffff, #0d9488);
+  background: linear-gradient(to right, #ffffff, #245db4);
   border: 1px solid var(--gx-border);
 }
 
 [data-theme="dark"] .legend-gradient {
-  background: linear-gradient(to right, #1e293b, #2dd4bf);
+  background: linear-gradient(to right, #ffffff, #245db4);
 }
 
 .legend-label {
@@ -629,7 +630,7 @@
 /* ── Table ───────────────────────────────────── */
 .results-table-container {
   overflow: auto;
-  border-radius: 8px;
+  border-radius: var(--gx-radius);
   border: 1px solid var(--gx-border);
   max-height: 520px;
 }
@@ -698,7 +699,7 @@
 .log-console {
   background: var(--gx-bg-alt);
   border: 1px solid var(--gx-border);
-  border-radius: 12px;
+  border-radius: var(--gx-radius-lg);
   padding: 1.5rem;
   margin-top: 1.5rem;
   box-shadow: var(--gx-shadow);
@@ -744,7 +745,7 @@
 
 .copy-log-button:hover {
   background: var(--gx-accent);
-  color: white;
+  color: var(--gx-text-inverted);
   border-color: var(--gx-accent);
 }
 
@@ -753,10 +754,10 @@
   overflow-y: auto;
   background: var(--gx-bg-elevated);
   border: 1px solid var(--gx-border);
-  border-radius: 8px;
+  border-radius: var(--gx-radius);
   padding: 0.75rem;
   font-family: var(--gx-font-mono);
-  font-size: 0.78rem;
+  font-size: 14px;
   line-height: 1.6;
 }
 
@@ -780,7 +781,7 @@
 .about-page section {
   background: var(--gx-bg-alt);
   border: 1px solid var(--gx-border);
-  border-radius: 12px;
+  border-radius: var(--gx-radius-lg);
   padding: 1.75rem;
   margin-bottom: 1.5rem;
   box-shadow: var(--gx-shadow);
@@ -839,7 +840,7 @@
 }
 
 .about-links a:hover {
-  color: white;
+  color: var(--gx-text-inverted);
   background: var(--gx-accent);
   border-color: var(--gx-accent);
 }
@@ -850,7 +851,7 @@
   gap: 0.75rem;
   background: var(--gx-accent-dim);
   border: 1px solid var(--gx-tag-border);
-  border-radius: 10px;
+  border-radius: var(--gx-radius-lg);
   padding: 1rem 1.25rem;
   margin-top: 1rem;
 }
@@ -1019,3 +1020,8 @@
     justify-content: flex-start;
   }
 }
+
+/* Navigation colours follow the shared charcoal navigation tokens. */
+.tab-bar { background: var(--gx-nav-bg); }
+.tab { color: var(--gx-nav-muted); }
+.tab:hover, .tab-active { color: var(--gx-nav-text); }

@@ -126,7 +126,7 @@ export function ResultsSummary({ result }: ResultsSummaryProps) {
                           i === j
                             ? undefined
                             : {
-                                background: `rgba(13,148,136,${alpha})`,
+                                background: `rgba(36,93,180,${alpha})`,
                                 fontFamily: 'var(--gx-font-mono)',
                                 textAlign: 'right',
                                 color: alpha > 0.4 ? 'var(--gx-text-inverted)' : 'var(--gx-text)',

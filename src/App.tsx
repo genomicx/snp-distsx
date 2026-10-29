@@ -149,7 +149,7 @@ function App() {
               GitHub
             </a>
             <a
-              href="https://genomicx.vercel.app/about"
+              href="https://genomicx.org/about"
               target="_blank"
               rel="noopener noreferrer"
             >

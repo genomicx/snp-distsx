@@ -5,12 +5,12 @@ interface DistanceHeatmapProps {
   matrix: number[][]
 }
 
-// Interpolate white → GX teal based on t ∈ [0, 1]
-// white: rgb(255,255,255)  →  teal: rgb(13,148,136)
+// Interpolate white → GX blue based on t ∈ [0, 1]
+// white: rgb(255,255,255)  →  blue: rgb(36,93,180)
 function heatColor(t: number): string {
-  const r = Math.round(255 * (1 - t) + 13 * t)
-  const g = Math.round(255 * (1 - t) + 148 * t)
-  const b = Math.round(255 * (1 - t) + 136 * t)
+  const r = Math.round(255 * (1 - t) + 36 * t)
+  const g = Math.round(255 * (1 - t) + 93 * t)
+  const b = Math.round(255 * (1 - t) + 180 * t)
   return `rgb(${r},${g},${b})`
 }
 
@@ -47,7 +47,7 @@ export function DistanceHeatmap({ names, matrix }: DistanceHeatmapProps) {
     canvas.height = canvasSize
 
     // Background
-    ctx.fillStyle = '#0f172a'
+    ctx.fillStyle = '#191c21'
     ctx.fillRect(0, 0, canvasSize, canvasSize)
 
     // Draw cells
@@ -60,8 +60,8 @@ export function DistanceHeatmap({ names, matrix }: DistanceHeatmapProps) {
 
         // Draw numeric labels for small matrices
         if (showLabels && cellSize >= 20) {
-          ctx.fillStyle = t > 0.45 ? '#f1f5f9' : '#0f172a'
-          ctx.font = `${Math.min(cellSize * 0.55, 11)}px "JetBrains Mono", monospace`
+          ctx.fillStyle = t > 0.45 ? '#e9ecf1' : '#191c21'
+          ctx.font = `${Math.min(cellSize * 0.55, 11)}px "IBM Plex Mono", monospace`
           ctx.textAlign = 'center'
           ctx.textBaseline = 'middle'
           ctx.fillText(
@@ -76,8 +76,8 @@ export function DistanceHeatmap({ names, matrix }: DistanceHeatmapProps) {
     // Draw row labels (left side)
     if (showLabels) {
       const fontSize = Math.min(cellSize * 0.5, 11)
-      ctx.font = `${fontSize}px Inter, sans-serif`
-      ctx.fillStyle = '#f1f5f9'
+      ctx.font = `${fontSize}px "IBM Plex Sans", sans-serif`
+      ctx.fillStyle = '#e9ecf1'
       ctx.textAlign = 'right'
       ctx.textBaseline = 'middle'
       for (let i = 0; i < N; i++) {

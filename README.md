@@ -2,6 +2,8 @@
 
 > Browser-based pairwise SNP distance matrix calculator from aligned FASTA files.
 
+[Open snp-distsx](https://snp-distsx.genomicx.org) — hosted on Cloudflare Pages.
+
 snp-distsx is a web application implementing the [snp-dists](https://github.com/tseemann/snp-dists) algorithm by [Torsten Seemann](https://github.com/tseemann) (Melbourne Bioinformatics, University of Melbourne), reimplemented in TypeScript for the browser. No data ever leaves your machine.
 
 ## Features
@@ -45,6 +47,7 @@ A FASTA file where **all sequences are the same length** (a multiple sequence al
 ## Development
 
 ```bash
+nvm use          # Node 24
 npm install
 npm run dev       # start dev server at http://localhost:5173
 npm run test      # run unit tests
@@ -93,3 +96,9 @@ GPL-3.0-only — in keeping with the original snp-dists licence.
 
 This program is free software: you can redistribute it and/or modify it under the terms of the
 GNU General Public License as published by the Free Software Foundation, version 3 only.
+
+## Cloudflare Pages
+
+Build with Node 24 using `npm run build`; deploy the `dist` directory to the
+`snp-distsx` Pages project. Production and preview builds use `NODE_VERSION=24`.
+The application and bundled fonts are static; analysis stays entirely in the browser.
